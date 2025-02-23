@@ -1,4 +1,4 @@
-#This is a forked repository.
+# This is a forked repository.
 
 ![Generative AI For Beginners](./images/repo-thumbnailv4-fixed.png?WT.mc_id=academic-105485-koreyst)
 
