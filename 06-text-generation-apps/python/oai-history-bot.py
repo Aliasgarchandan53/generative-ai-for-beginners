@@ -1,4 +1,4 @@
-from openai import OpenAI
+from openai import AzureOpenAI
 import os
 from dotenv import load_dotenv
 
@@ -6,8 +6,15 @@ from dotenv import load_dotenv
 load_dotenv()
 
 # configure Azure OpenAI service client 
-client = OpenAI()
-deployment="gpt-3.5-turbo"
+# client = OpenAI()
+# deployment="gpt-3.5-turbo"
+
+client = AzureOpenAI(
+    azure_endpoint= os.environ["AZURE_OPENAI_ENDPOINT"],
+    api_key=os.environ["AZURE_OPENAI_API_KEY"],
+    api_version=os.environ["AZURE_OPENAI_API_VERSION"]
+)
+deployment = os.environ["AZURE_OPENAI_DEPLOYMENT"]
 
 # add your completion code
 persona = input("Tell me the historical character I want to be: ")
